@@ -31,28 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCadCat = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton7 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton8 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCategorias = new DevComponents.DotNetBar.ButtonX();
+            this.btnUsuarios = new DevComponents.DotNetBar.ButtonX();
+            this.btnDespesas = new DevComponents.DotNetBar.ButtonX();
+            this.btnMovimentacoes = new DevComponents.DotNetBar.ButtonX();
+            this.btnReceitas = new DevComponents.DotNetBar.ButtonX();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCadCat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).BeginInit();
+            this.cadastroDeCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CadUserToolp = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.reflectionImage1 = new DevComponents.DotNetBar.Controls.ReflectionImage();
+            this.bunifuGradientPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // styleManager1
@@ -60,141 +54,165 @@
             this.styleManager1.ManagerColorTint = System.Drawing.Color.Black;
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007VistaGlass;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.bunifuImageButton5);
-            this.panel1.Controls.Add(this.bunifuImageButton6);
-            this.panel1.Controls.Add(this.bunifuImageButton7);
-            this.panel1.Controls.Add(this.bunifuImageButton8);
-            this.panel1.Controls.Add(this.bunifuImageButton3);
-            this.panel1.Controls.Add(this.bunifuImageButton4);
-            this.panel1.Controls.Add(this.bunifuImageButton2);
-            this.panel1.Controls.Add(this.btnCadCat);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1333, 65);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnCadCat
-            // 
-            this.btnCadCat.Image = ((System.Drawing.Image)(resources.GetObject("btnCadCat.Image")));
-            this.btnCadCat.ImageActive = null;
-            this.btnCadCat.Location = new System.Drawing.Point(12, 3);
-            this.btnCadCat.Name = "btnCadCat";
-            this.btnCadCat.Size = new System.Drawing.Size(59, 59);
-            this.btnCadCat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCadCat.TabIndex = 0;
-            this.btnCadCat.TabStop = false;
-            this.toolTip1.SetToolTip(this.btnCadCat, "Cadastro de Categorias");
-            this.btnCadCat.Zoom = 10;
-            this.btnCadCat.Click += new System.EventHandler(this.btnCadCat_Click);
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(77, 3);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 1;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(207, 3);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 3;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            // 
-            // bunifuImageButton4
-            // 
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(142, 3);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 2;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
-            // 
-            // bunifuImageButton5
-            // 
-            this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
-            this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(467, 3);
-            this.bunifuImageButton5.Name = "bunifuImageButton5";
-            this.bunifuImageButton5.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton5.TabIndex = 7;
-            this.bunifuImageButton5.TabStop = false;
-            this.bunifuImageButton5.Zoom = 10;
-            // 
-            // bunifuImageButton6
-            // 
-            this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
-            this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(402, 3);
-            this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton6.TabIndex = 6;
-            this.bunifuImageButton6.TabStop = false;
-            this.bunifuImageButton6.Zoom = 10;
-            // 
-            // bunifuImageButton7
-            // 
-            this.bunifuImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton7.Image")));
-            this.bunifuImageButton7.ImageActive = null;
-            this.bunifuImageButton7.Location = new System.Drawing.Point(337, 3);
-            this.bunifuImageButton7.Name = "bunifuImageButton7";
-            this.bunifuImageButton7.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton7.TabIndex = 5;
-            this.bunifuImageButton7.TabStop = false;
-            this.bunifuImageButton7.Zoom = 10;
-            // 
-            // bunifuImageButton8
-            // 
-            this.bunifuImageButton8.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton8.Image")));
-            this.bunifuImageButton8.ImageActive = null;
-            this.bunifuImageButton8.Location = new System.Drawing.Point(272, 3);
-            this.bunifuImageButton8.Name = "bunifuImageButton8";
-            this.bunifuImageButton8.Size = new System.Drawing.Size(59, 59);
-            this.bunifuImageButton8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton8.TabIndex = 4;
-            this.bunifuImageButton8.TabStop = false;
-            this.bunifuImageButton8.Zoom = 10;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1333, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastrosToolStripMenuItem
-            // 
-            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.cadastrosToolStripMenuItem.Text = "Cadastros";
-            // 
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.Color.White;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Informações";
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCategorias.Checked = true;
+            this.btnCategorias.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCategorias.FocusCuesEnabled = false;
+            this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
+            this.btnCategorias.Location = new System.Drawing.Point(12, 4);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(55, 55);
+            this.btnCategorias.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnCategorias.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.btnCategorias, "Cadastro de Categorias");
+            this.btnCategorias.Click += new System.EventHandler(this.btnCadCat_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnUsuarios.Checked = true;
+            this.btnUsuarios.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnUsuarios.FocusCuesEnabled = false;
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
+            this.btnUsuarios.Location = new System.Drawing.Point(73, 4);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(55, 55);
+            this.btnUsuarios.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnUsuarios.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnUsuarios, "Cadastro de Usuario");
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnDespesas
+            // 
+            this.btnDespesas.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDespesas.Checked = true;
+            this.btnDespesas.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDespesas.FocusCuesEnabled = false;
+            this.btnDespesas.Image = ((System.Drawing.Image)(resources.GetObject("btnDespesas.Image")));
+            this.btnDespesas.Location = new System.Drawing.Point(195, 4);
+            this.btnDespesas.Name = "btnDespesas";
+            this.btnDespesas.Size = new System.Drawing.Size(55, 55);
+            this.btnDespesas.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnDespesas.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnDespesas, "Despesas");
+            this.btnDespesas.Click += new System.EventHandler(this.btnDespesas_Click);
+            // 
+            // btnMovimentacoes
+            // 
+            this.btnMovimentacoes.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnMovimentacoes.Checked = true;
+            this.btnMovimentacoes.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnMovimentacoes.FocusCuesEnabled = false;
+            this.btnMovimentacoes.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacoes.Image")));
+            this.btnMovimentacoes.Location = new System.Drawing.Point(256, 4);
+            this.btnMovimentacoes.Name = "btnMovimentacoes";
+            this.btnMovimentacoes.Size = new System.Drawing.Size(55, 55);
+            this.btnMovimentacoes.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnMovimentacoes.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnMovimentacoes, "Movimentações");
+            // 
+            // btnReceitas
+            // 
+            this.btnReceitas.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnReceitas.Checked = true;
+            this.btnReceitas.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnReceitas.FocusCuesEnabled = false;
+            this.btnReceitas.Image = ((System.Drawing.Image)(resources.GetObject("btnReceitas.Image")));
+            this.btnReceitas.Location = new System.Drawing.Point(134, 4);
+            this.btnReceitas.Name = "btnReceitas";
+            this.btnReceitas.Size = new System.Drawing.Size(55, 55);
+            this.btnReceitas.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2010;
+            this.btnReceitas.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnReceitas, "Receitas");
+            this.btnReceitas.Click += new System.EventHandler(this.btnReceitas_Click);
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnReceitas);
+            this.bunifuGradientPanel1.Controls.Add(this.btnDespesas);
+            this.bunifuGradientPanel1.Controls.Add(this.btnMovimentacoes);
+            this.bunifuGradientPanel1.Controls.Add(this.btnUsuarios);
+            this.bunifuGradientPanel1.Controls.Add(this.btnCategorias);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Silver;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 25);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1300, 64);
+            this.bunifuGradientPanel1.TabIndex = 3;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1300, 25);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.Checked = true;
+            this.cadastrosToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDeCategoriasToolStripMenuItem,
+            this.CadUserToolp});
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(86, 21);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // cadastroDeCategoriasToolStripMenuItem
+            // 
+            this.cadastroDeCategoriasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroDeCategoriasToolStripMenuItem.Image")));
+            this.cadastroDeCategoriasToolStripMenuItem.Name = "cadastroDeCategoriasToolStripMenuItem";
+            this.cadastroDeCategoriasToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.cadastroDeCategoriasToolStripMenuItem.Text = "Cadastro de Categorias";
+            // 
+            // CadUserToolp
+            // 
+            this.CadUserToolp.Image = ((System.Drawing.Image)(resources.GetObject("CadUserToolp.Image")));
+            this.CadUserToolp.Name = "CadUserToolp";
+            this.CadUserToolp.Size = new System.Drawing.Size(234, 22);
+            this.CadUserToolp.Text = "Cadastro de Usuarios";
+            this.CadUserToolp.Click += new System.EventHandler(this.CadUserToolp_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.reflectionImage1);
+            this.panel1.Location = new System.Drawing.Point(1228, 600);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(60, 100);
+            this.panel1.TabIndex = 7;
+            // 
+            // reflectionImage1
+            // 
+            // 
+            // 
+            // 
+            this.reflectionImage1.BackgroundStyle.Class = "";
+            this.reflectionImage1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.reflectionImage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reflectionImage1.Image = ((System.Drawing.Image)(resources.GetObject("reflectionImage1.Image")));
+            this.reflectionImage1.Location = new System.Drawing.Point(0, 0);
+            this.reflectionImage1.Name = "reflectionImage1";
+            this.reflectionImage1.Size = new System.Drawing.Size(60, 100);
+            this.reflectionImage1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -203,31 +221,25 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1333, 726);
+            this.ClientSize = new System.Drawing.Size(1300, 712);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.EnableGlass = false;
+            this.FlattenMDIBorder = false;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCadCat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,18 +248,19 @@
         #endregion
 
         private DevComponents.DotNetBar.StyleManager styleManager1;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton7;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton8;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
-        private Bunifu.Framework.UI.BunifuImageButton btnCadCat;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
+        private DevComponents.DotNetBar.ButtonX btnCategorias;
+        private DevComponents.DotNetBar.ButtonX btnUsuarios;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private DevComponents.DotNetBar.ButtonX btnDespesas;
+        private DevComponents.DotNetBar.ButtonX btnMovimentacoes;
+        private DevComponents.DotNetBar.ButtonX btnReceitas;
+        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDeCategoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CadUserToolp;
+        private System.Windows.Forms.Panel panel1;
+        private DevComponents.DotNetBar.Controls.ReflectionImage reflectionImage1;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControleFinancas.View;
 using DevComponents.DotNetBar;
 
 namespace ControleFinancas
@@ -25,9 +26,34 @@ namespace ControleFinancas
 
         private void btnCadCat_Click(object sender, EventArgs e)
         {
-            Form2 fmr = new Form2();
+            openForm(new CadCat());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            openForm(new CadUser());
+        }
+
+        private void btnReceitas_Click(object sender, EventArgs e)
+        {
+            openForm(new CadRec());
+        }
+
+        public void openForm(Form fmr)
+        {
             fmr.MdiParent = this;
+            fmr.StartPosition = FormStartPosition.CenterScreen;
             fmr.Show();
+        }
+
+        private void btnDespesas_Click(object sender, EventArgs e)
+        {
+            openForm(new CadDesp());
+        }
+
+        private void CadUserToolp_Click(object sender, EventArgs e)
+        {
+            openForm(new teste());
         }
     }
 }
