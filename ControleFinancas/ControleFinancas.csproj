@@ -86,10 +86,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadCat.cs">
+    <Compile Include="Model\Bean\ControleBEAN.cs" />
+    <Compile Include="Model\Dao\ControleDAO.cs" />
+    <Compile Include="View\CadCat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadCat.Designer.cs">
+    <Compile Include="View\CadCat.Designer.cs">
       <DependentUpon>CadCat.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Bean\CategoriasBEAN.cs" />
@@ -124,16 +126,10 @@
     <Compile Include="View\MessageError.Designer.cs">
       <DependentUpon>MessageError.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\teste.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\teste.Designer.cs">
-      <DependentUpon>teste.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadCat.resx">
+    <EmbeddedResource Include="View\CadCat.resx">
       <DependentUpon>CadCat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -156,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MessageError.resx">
       <DependentUpon>MessageError.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\teste.resx">
-      <DependentUpon>teste.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

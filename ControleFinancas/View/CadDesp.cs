@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using ControleFinancas.Model.Bean;
 using ControleFinancas.Model.Dao;
 using Npgsql;
 using ControleFinancas.Controller;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
 
 namespace ControleFinancas.View
 {
@@ -21,7 +18,7 @@ namespace ControleFinancas.View
         DespesasDAO desDao = new DespesasDAO();
 
         CategoriasDAO cCatD = new CategoriasDAO();
-        UsuarioDAO cUserD = new UsuarioDAO();
+        CategoriasBEAN cCatB = new CategoriasBEAN();
 
         UsuarioDAO userDao = new UsuarioDAO();
         UsuariosBEAN userBean = new UsuariosBEAN();
@@ -35,59 +32,32 @@ namespace ControleFinancas.View
             InitializeComponent();
             dgDespesas.Columns[0].DefaultCellStyle.Format = "0000";
             dgDespesas.Columns[5].DefaultCellStyle.Format = "000";
-            string sDataSistema = DateTime.Now.ToShortDateString();
             polulaGrid();
             populaForm();
             limpaForm();
             pegaTotal();
             pegaSaldo();
-            //foreach (DataGridViewRow row in dgDespesas.Rows)
-            //{
-            //    if (Convert.ToDateTime(row.Cells[4].Value) < Convert.ToDateTime(sDataSistema))
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.Red;
-            //    }
-            //}
-            //foreach (DataGridViewRow row in dgDespesas.Rows)
-            //{
-            //    string RowType = row.Cells[1].Value.ToString();
-
-            //    if (RowType == "0002")
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.Red;
-            //        row.DefaultCellStyle.ForeColor = Color.White;
-            //    }
-            //    else if (RowType == "0004")
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.Yellow;
-            //        row.DefaultCellStyle.ForeColor = Color.Black;
-            //    }
-            //}
-
-            foreach (DataGridViewRow dRow in dgDespesas.Rows)
-            {
-                if (dRow.Cells[4].Value.ToString() != DateTime.Now.ToShortDateString())
-                {
-                    dRow.DefaultCellStyle.BackColor = Color.Red;
-                }
-            }
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
             if (txtDescricao.Text == "")
             {
-                MessageError mErro = new MessageError("Infome uma descrição para a Categoria e um limite para Gastos!");
+                MessageError mErro = new MessageError("Infome uma descrição para a Despesa!");
+                mErro.ShowDialog();
+            }
+            else if (cbCategorias.SelectedIndex == -1)
+            {
+                MessageError mErro = new MessageError("Infome uma categoria para a Despesa!");
                 mErro.ShowDialog();
             }
             else if (txtValor.Text == "")
             {
-                MessageError mErro = new MessageError("Infome uma descrição para a Categoria e um limite para Gastos!");
+                MessageError mErro = new MessageError("Infome um Valor para a Despesa!");
                 mErro.ShowDialog();
             }
             else
             {
-
                 desBean.Despesa = txtDescricao.Text;
                 desBean.Categoria = (int)cbCategorias.SelectedValue;
                 desBean.Valor_total = Convert.ToDouble(txtValor.Text);
@@ -97,23 +67,18 @@ namespace ControleFinancas.View
                 desBean.Parcelas = Convert.ToInt32(Math.Round(nmrParcelas.Value, 0));
                 desBean.Observacao = txtObs.Text;
 
-                
-
                 double dValorT = Convert.ToDouble(txtValor.Text);
                 int iParcela = Convert.ToInt32(Math.Round(nmrParcelas.Value, 0));
 
                 double dValorP = dValorT / iParcela;
-
                 string sValorP = dValorP.ToString();
-
-                //Convert.ToDouble(sValorP.Replace(",", "."));
                 string sParcela = sValorP.Replace(",", ".");
-                
-
                 desBean.Valor_parcela = Convert.ToDouble(sParcela);
 
-
                 desDao.inserir(desBean);
+
+                int iCtaegoria = (int)cbCategorias.SelectedValue;
+
                 polulaGrid();
                 pegaTotal();
                 limpaForm();
@@ -131,18 +96,13 @@ namespace ControleFinancas.View
                     nConn = new Conexao();
                     nConn.AbreConexao();
 
-                    //string sSQL = "SELECT SUM(valor_total::double precision) FROM despesas;";
-                    //nConn.ExecutarSQL(sSQL);
-
                     NpgsqlCommand cmd = new NpgsqlCommand("SELECT SUM(valor_total::double precision) FROM despesas;", nConn.nConn);
                     NpgsqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-
                         double dTotal = Convert.ToDouble(dr.GetValue(0));
                         dTotalDespesas = dTotal;
                         txtTotal.Text = String.Format("{0:C}", dTotal);
-
                     }
                 }
                 catch (NpgsqlException e)
@@ -177,7 +137,6 @@ namespace ControleFinancas.View
                     {
                         double dSaldo = Convert.ToDouble(dr.GetValue(0));
                         double dTotal = dSaldo - dTotalDespesas;
-
                         txtSaldo.Text = String.Format("{0:C}", dTotal);
                     }
                 }
@@ -200,7 +159,6 @@ namespace ControleFinancas.View
         public void polulaGrid()
         {
             dgDespesas.DataSource = desDao.ReadTable();
-            //this.dgDespesas.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
         }
 
         public void limpaForm()
@@ -214,13 +172,12 @@ namespace ControleFinancas.View
             nmrParcelas.Value = 1;
             txtObs.Text = "";
             txtDescricao.Focus();
-
-            
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             limpaForm();
+            populaForm();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -249,8 +206,6 @@ namespace ControleFinancas.View
 
         public void populaForm()
         {
-            //dataGridView1.DataSource = cadDAO.readtable();
-
             cbUsuarios.DataSource = userDao.ReadTable();
             cbUsuarios.DisplayMember = "nome";
             cbUsuarios.ValueMember = "id";
@@ -260,8 +215,6 @@ namespace ControleFinancas.View
             cbCategorias.DisplayMember = "descricao";
             cbCategorias.ValueMember = "id";
             cbCategorias.SelectedIndex = -1;
-
-                       
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -292,52 +245,121 @@ namespace ControleFinancas.View
 
         private void dgDespesas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            if (e.ListChangedType != ListChangedType.ItemDeleted)
             {
+                string sCorNormal;
+                string sCorUrgente;
+                string sCorAtencao;
 
-                DataGridViewCellStyle dgAmarelo = this.dgDespesas.DefaultCellStyle.Clone();
-                dgAmarelo.BackColor = Color.FromArgb(255, 128, 0);
-
-                DataGridViewCellStyle dgVermelho = this.dgDespesas.DefaultCellStyle.Clone();
-                dgVermelho.BackColor = Color.FromArgb(192, 0, 0);
-
-                DataGridViewCellStyle dgPreto = this.dgDespesas.DefaultCellStyle.Clone();
-                dgPreto.ForeColor = Color.Black;
-                dgPreto.BackColor = Color.White;
-
-
-
-
-                foreach (DataGridViewRow rdDespesas in this.dgDespesas.Rows)
+                try
                 {
+                    nConn = new Conexao();
+                    nConn.AbreConexao();
 
-                    if (rdDespesas.Cells[3].Value != null)
+                    NpgsqlCommand cmd = new NpgsqlCommand("select cor_normal, cor_atencao, cor_urgente from controle;", nConn.nConn);
+                    NpgsqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
                     {
+                       // var c = GetColorAt(cursor);
+                       // this.BackColor = c;
 
-                        string sDataSistema = DateTime.Now.ToShortDateString();
-                        string sDataVencimento = rdDespesas.Cells[3].Value.ToString();
+                        sCorNormal = dr.GetValue(0).ToString();
+                        sCorAtencao = dr.GetValue(1).ToString();
+                        sCorUrgente = dr.GetValue(2).ToString();
+                    }
+                }
+                catch (NpgsqlException ex)
+                {
+                    MessageError mErro = new MessageError("Erro ao tentar somar os valores: \n\n" + ex.Message);
+                    mErro.ShowDialog();
+                }
+                finally
+                {
+                    nConn = null;
+                }
 
-                        TimeSpan date = Convert.ToDateTime(sDataVencimento) - Convert.ToDateTime(sDataSistema);
+                if (e.ListChangedType != ListChangedType.ItemDeleted)
+                {
+                    DataGridViewCellStyle dgAmarelo = this.dgDespesas.DefaultCellStyle.Clone();
+                    dgAmarelo.ForeColor = Color.DarkOrange;
 
-                        int iTotalDias = date.Days;
+                    DataGridViewCellStyle dgVermelho = this.dgDespesas.DefaultCellStyle.Clone();
+                    dgVermelho.ForeColor = Color.Red;
 
-                        if (iTotalDias <= 7)
+                    DataGridViewCellStyle dgPreto = this.dgDespesas.DefaultCellStyle.Clone();
+                    dgPreto.ForeColor = Color.Black;
+
+                    foreach (DataGridViewRow rdDespesas in this.dgDespesas.Rows)
+                    {
+                        if (rdDespesas.Cells[3].Value != null)
                         {
-                            rdDespesas.DefaultCellStyle = dgAmarelo;
+                            string sDataSistema = DateTime.Now.ToShortDateString();
+                            string sDataVencimento = rdDespesas.Cells[3].Value.ToString();
 
-                            if (iTotalDias <= 1)
+                            TimeSpan date = Convert.ToDateTime(sDataVencimento) - Convert.ToDateTime(sDataSistema);
+                            int iTotalDias = date.Days;
+
+                            if (iTotalDias <= 7)
                             {
-                                rdDespesas.DefaultCellStyle = dgVermelho;
+                                rdDespesas.DefaultCellStyle = dgAmarelo;
+
+                                if (iTotalDias <= 1)
+                                {
+                                    rdDespesas.DefaultCellStyle = dgVermelho;
+                                }
                             }
-                        }
-                        
-                        else if (iTotalDias > 7)
-                        {
-                            rdDespesas.DefaultCellStyle = dgPreto;
+                            else if (iTotalDias > 7)
+                            {
+                                rdDespesas.DefaultCellStyle = dgPreto;
+                            }
                         }
                     }
                 }
             }
+        }
+
+        [DllImport("user32.dll")]
+        static extern bool GetCursorPos(ref Point lpPoint);
+
+        [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
+        public static extern int BitBlt(IntPtr hDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
+
+        private void MouseMoveTimer_Tick(object sender, EventArgs e)
+        {
+            Point cursor = new Point();
+            GetCursorPos(ref cursor);
+
+            var c = GetColorAt(cursor);
+            this.BackColor = c;
+
+            if (c.R == c.G && c.G < 64 && c.B > 128)
+            {
+                MessageBox.Show("Blue");
+            }
+        }
+
+        Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb);
+
+        public Color GetColorAt(Point location)
+        {
+            using (Graphics gdest = Graphics.FromImage(screenPixel))
+            {
+                using (Graphics gsrc = Graphics.FromHwnd(IntPtr.Zero))
+                {
+                    IntPtr hSrcDC = gsrc.GetHdc();
+                    IntPtr hDC = gdest.GetHdc();
+                    int retval = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y, (int)CopyPixelOperation.SourceCopy);
+                    gdest.ReleaseHdc();
+                    gsrc.ReleaseHdc();
+                }
+            }
+
+            return screenPixel.GetPixel(0, 0);
+        }
+
+        private void CadDesp_Load(object sender, EventArgs e)
+        {
+            dgDespesas.Sort(dgDespesas.Columns[3], ListSortDirection.Ascending);
         }
     }
 }

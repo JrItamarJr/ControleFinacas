@@ -42,12 +42,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnGravar = new DevComponents.DotNetBar.ButtonX();
             this.btnLimpar = new DevComponents.DotNetBar.ButtonX();
-            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.dtPagamento = new System.Windows.Forms.NumericUpDown();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtPagamento)).BeginInit();
@@ -146,46 +146,6 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // Saldo
-            // 
-            this.Saldo.DataPropertyName = "data_pagamento";
-            dataGridViewCellStyle1.NullValue = "0,00";
-            this.Saldo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Saldo.Frozen = true;
-            this.Saldo.HeaderText = "Dia Pagamento";
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            this.Saldo.Width = 120;
-            // 
-            // Limite
-            // 
-            this.Limite.DataPropertyName = "salario";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0,00";
-            this.Limite.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Limite.Frozen = true;
-            this.Limite.HeaderText = "Salário";
-            this.Limite.Name = "Limite";
-            this.Limite.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "nome";
-            this.Descricao.Frozen = true;
-            this.Descricao.HeaderText = "Nome";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 460;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id";
-            this.ID.Frozen = true;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
             // dgUsuarios
             // 
             this.dgUsuarios.AllowUserToAddRows = false;
@@ -197,14 +157,14 @@
             this.dgUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgUsuarios.ColumnHeadersHeight = 30;
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -226,9 +186,65 @@
             // dtPagamento
             // 
             this.dtPagamento.Location = new System.Drawing.Point(476, 29);
+            this.dtPagamento.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.dtPagamento.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.dtPagamento.Name = "dtPagamento";
             this.dtPagamento.Size = new System.Drawing.Size(105, 23);
             this.dtPagamento.TabIndex = 5;
+            this.dtPagamento.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.Frozen = true;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "nome";
+            this.Descricao.Frozen = true;
+            this.Descricao.HeaderText = "Nome";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 455;
+            // 
+            // Limite
+            // 
+            this.Limite.DataPropertyName = "salario";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0,00";
+            this.Limite.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Limite.Frozen = true;
+            this.Limite.HeaderText = "Salário";
+            this.Limite.Name = "Limite";
+            this.Limite.ReadOnly = true;
+            // 
+            // Saldo
+            // 
+            this.Saldo.DataPropertyName = "data_pagamento";
+            dataGridViewCellStyle3.Format = "N5";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Saldo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Saldo.Frozen = true;
+            this.Saldo.HeaderText = "Dia Pagamento";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Width = 120;
             // 
             // CadUser
             // 
@@ -272,11 +288,11 @@
         private System.Windows.Forms.Label label3;
         private DevComponents.DotNetBar.ButtonX btnGravar;
         private DevComponents.DotNetBar.ButtonX btnLimpar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Limite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridView dgUsuarios;
         private System.Windows.Forms.NumericUpDown dtPagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Limite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
     }
 }

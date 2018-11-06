@@ -19,11 +19,6 @@ namespace ControleFinancas
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadCat_Click(object sender, EventArgs e)
         {
             openForm(new CadCat());
@@ -39,21 +34,16 @@ namespace ControleFinancas
             openForm(new CadRec());
         }
 
-        public void openForm(Form fmr)
-        {
-            fmr.MdiParent = this;
-            fmr.StartPosition = FormStartPosition.CenterScreen;
-            fmr.Show();
-        }
-
         private void btnDespesas_Click(object sender, EventArgs e)
         {
             openForm(new CadDesp());
         }
 
-        private void CadUserToolp_Click(object sender, EventArgs e)
+        public void openForm(Form fmr)
         {
-            openForm(new teste());
+            fmr.MdiParent = this;
+            fmr.StartPosition = FormStartPosition.CenterScreen;
+            fmr.Show();
         }
     }
 }
