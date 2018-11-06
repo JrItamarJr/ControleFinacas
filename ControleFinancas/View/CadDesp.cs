@@ -360,6 +360,7 @@ namespace ControleFinancas.View
         private void CadDesp_Load(object sender, EventArgs e)
         {
             dgDespesas.Sort(dgDespesas.Columns[3], ListSortDirection.Ascending);
+            //teste
         }
     }
 }
