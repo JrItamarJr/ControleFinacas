@@ -41,7 +41,6 @@ namespace ControleFinancas.View
             }
             else
             {
-
                 userBean.Nome = txtDescricao.Text;
                 userBean.Salario = Convert.ToDouble(txtSalario.Text);
                 userBean.Data_pagamento = Convert.ToInt32(Math.Round(dtPagamento.Value, 0));

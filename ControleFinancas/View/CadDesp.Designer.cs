@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadDesp));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +54,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtVencimento = new System.Windows.Forms.DateTimePicker();
             this.dgDespesas = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nmrParcelas = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -74,17 +86,7 @@
             this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tarjaTipo = new System.Windows.Forms.ImageList(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgDespesas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrParcelas)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -261,14 +263,14 @@
             this.dgDespesas.BackgroundColor = System.Drawing.Color.White;
             this.dgDespesas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgDespesas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDespesas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(177)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDespesas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgDespesas.ColumnHeadersHeight = 30;
             this.dgDespesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgDespesas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -283,8 +285,17 @@
             this.Column1,
             this.Column2,
             this.obs});
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(172)))), ((int)(((byte)(177)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgDespesas.DefaultCellStyle = dataGridViewCellStyle35;
             this.dgDespesas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDespesas.EnableHeadersVisualStyles = false;
+            this.dgDespesas.GridColor = System.Drawing.Color.Gray;
             this.dgDespesas.Location = new System.Drawing.Point(0, 0);
             this.dgDespesas.MultiSelect = false;
             this.dgDespesas.Name = "dgDespesas";
@@ -295,6 +306,109 @@
             this.dgDespesas.TabIndex = 10;
             this.dgDespesas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgDespesas_DataBindingComplete);
             this.dgDespesas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgDespesas_MouseClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 45;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "despesa";
+            this.Descricao.HeaderText = "Despesa";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 86;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "DATA_PAGAMENTO";
+            dataGridViewCellStyle30.Format = "d";
+            dataGridViewCellStyle30.NullValue = null;
+            this.data.DefaultCellStyle = dataGridViewCellStyle30;
+            this.data.HeaderText = "data";
+            this.data.Name = "data";
+            this.data.ReadOnly = true;
+            this.data.Visible = false;
+            this.data.Width = 65;
+            // 
+            // Limite
+            // 
+            this.Limite.DataPropertyName = "valor_total";
+            dataGridViewCellStyle31.Format = "C2";
+            dataGridViewCellStyle31.NullValue = "0,00";
+            this.Limite.DefaultCellStyle = dataGridViewCellStyle31;
+            this.Limite.HeaderText = "Valor";
+            this.Limite.Name = "Limite";
+            this.Limite.ReadOnly = true;
+            this.Limite.Width = 66;
+            // 
+            // Saldo
+            // 
+            this.Saldo.DataPropertyName = "data_vencimento";
+            dataGridViewCellStyle32.Format = "d";
+            this.Saldo.DefaultCellStyle = dataGridViewCellStyle32;
+            this.Saldo.HeaderText = "Vencimento";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Width = 111;
+            // 
+            // Parcelas
+            // 
+            this.Parcelas.DataPropertyName = "parcelas";
+            this.Parcelas.HeaderText = "Parcelas";
+            this.Parcelas.Name = "Parcelas";
+            this.Parcelas.ReadOnly = true;
+            this.Parcelas.Width = 86;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "descricao";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 99;
+            // 
+            // Usuario
+            // 
+            this.Usuario.DataPropertyName = "nome";
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 78;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "data_entrada";
+            dataGridViewCellStyle33.Format = "d";
+            dataGridViewCellStyle33.NullValue = null;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle33;
+            this.Column1.HeaderText = "Entrada";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 83;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "valor_parcela";
+            dataGridViewCellStyle34.Format = "C2";
+            dataGridViewCellStyle34.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle34;
+            this.Column2.HeaderText = "Valor Parcelas";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 124;
+            // 
+            // obs
+            // 
+            this.obs.DataPropertyName = "OBSERVACAO";
+            this.obs.HeaderText = "Observação";
+            this.obs.Name = "obs";
+            this.obs.ReadOnly = true;
+            this.obs.Width = 112;
             // 
             // nmrParcelas
             // 
@@ -400,7 +514,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(12, 486);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(12, 487);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -620,108 +734,10 @@
             this.tarjaTipo.Images.SetKeyName(1, "Icone_Circulo_Vermelho.png");
             this.tarjaTipo.Images.SetKeyName(2, "Icone_Circulo_Preto.png");
             // 
-            // ID
+            // timer1
             // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 45;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "despesa";
-            this.Descricao.HeaderText = "Despesa";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 86;
-            // 
-            // data
-            // 
-            this.data.DataPropertyName = "DATA_PAGAMENTO";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.data.DefaultCellStyle = dataGridViewCellStyle2;
-            this.data.HeaderText = "data";
-            this.data.Name = "data";
-            this.data.ReadOnly = true;
-            this.data.Visible = false;
-            this.data.Width = 64;
-            // 
-            // Limite
-            // 
-            this.Limite.DataPropertyName = "valor_total";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = "0,00";
-            this.Limite.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Limite.HeaderText = "Valor";
-            this.Limite.Name = "Limite";
-            this.Limite.ReadOnly = true;
-            this.Limite.Width = 66;
-            // 
-            // Saldo
-            // 
-            this.Saldo.DataPropertyName = "data_vencimento";
-            dataGridViewCellStyle4.Format = "d";
-            this.Saldo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Saldo.HeaderText = "Vencimento";
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            this.Saldo.Width = 111;
-            // 
-            // Parcelas
-            // 
-            this.Parcelas.DataPropertyName = "parcelas";
-            this.Parcelas.HeaderText = "Parcelas";
-            this.Parcelas.Name = "Parcelas";
-            this.Parcelas.ReadOnly = true;
-            this.Parcelas.Width = 86;
-            // 
-            // Categoria
-            // 
-            this.Categoria.DataPropertyName = "descricao";
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 99;
-            // 
-            // Usuario
-            // 
-            this.Usuario.DataPropertyName = "nome";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 78;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "data_entrada";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column1.HeaderText = "Entrada";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 83;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "valor_parcela";
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column2.HeaderText = "Valor Parcelas";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 124;
-            // 
-            // obs
-            // 
-            this.obs.DataPropertyName = "OBSERVACAO";
-            this.obs.HeaderText = "Observação";
-            this.obs.Name = "obs";
-            this.obs.ReadOnly = true;
-            this.obs.Width = 112;
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.MouseMoveTimer_Tick);
             // 
             // CadDesp
             // 
@@ -754,6 +770,7 @@
             this.MinimumSize = new System.Drawing.Size(873, 529);
             this.Name = "CadDesp";
             this.Text = "Despesas";
+            this.Load += new System.EventHandler(this.CadDesp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgDespesas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmrParcelas)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -816,5 +833,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn obs;
+        private System.Windows.Forms.Timer timer1;
     }
 }
